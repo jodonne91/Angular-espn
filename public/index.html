@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html ng-app='espnApp'>
+	<head>
+		<script type="text/javascript" src="libs/angular.js"></script>
+		<script	type="text/javascript" src='libs/underscore.js'></script>
+		<script type="text/javascript" src='libs/handlebars.js'></script>
+		<script type="text/javascript" src="index.js"></script>
+		<link type='stylesheet' href='index.css'/>
+	</head>
+	<body>
+		<header>
+			<div class='top-header'>
+			</div>
+			<div class='bottom-header'>
+				<div class='logo'>
+				</div>
+				<div class='shop-search'>
+					<button id='shop-button'>Shop</button>
+					<form ng-submit='searchSubmit()' id='search' name='search'>
+						<input id='search-input' placeholder='Search'></input>
+					</form>
+				</div>
+			</div>
+		</header>
+		<div class='scoreboard'>
+
+		</div>
+		<div class='main'>
+
+		</div>
+		<footer>
+
+		</footer>
+	</body>
+</html>
