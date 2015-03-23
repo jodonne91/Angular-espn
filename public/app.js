@@ -29,7 +29,7 @@
 			console.log(data)
 		});
 
-		this.selectHigh = function(item){
+		this.selectHighlight = function(item){
 			console.log(item)
 		}
 
