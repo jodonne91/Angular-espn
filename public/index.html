@@ -9,87 +9,91 @@
 		<link href="index.css" rel="stylesheet" />
 	</head>
 	<body>
-		<header>
-			<div class='top-header'>
-			</div>
-			<div class='bottom-header'>
-				<div class='logo'>
+		<div class="main-container">
+			<header>
+				<div class='top-header'>
 				</div>
-				<div class='shop-search'>
-					<button id='shop-button'>Shop</button>
-					<form  id='search' name='search'>
-						<input id='search-input' placeholder='Search'></input>
-					</form>
+				<div class='bottom-header'>
+					<div class='logo'>
+						<img src="http://www.letsmow.com/wp-content/uploads/2010/03/espn_logo.jpg"/>
+					</div>
+					<div class='shop-search'>
+						<button id='shop-button'>Shop</button>
+						<form  id='search' name='search'>
+							<input id='search-input' placeholder='Search'></input>
+						</form>
+					</div>
 				</div>
-			</div>
-		</header>
-		<div class="main">
-			<div class='scoreboard' ng-controller="scoreboardController as scoreboardCtrl">
-				<ul>
-					<li class='scoreboard-item' ng-repeat="game in scoreboardCtrl.games">
-						<div>
-							<table class = 'scoreboard-table'>
-								<caption class='scoreboard-timeleft'>{{game.time}}</caption>
-								<tr class = 'scoreboard-row scoreboard-teamA'>
-									<td>{{game.teamA.rank}}</td>
-									<td>{{game.teamA.name}}</td>
-									<td>{{game.teamA.score}}</td>
-								</tr>
-								<tr class = 'scoreboard-row scoreboard-teamB'>
-									<td>{{game.teamB.rank}}</td>
-									<td>{{game.teamB.name}}</td>
-									<td>{{game.teamB.score}}</td>
-								</tr>
-							</table>
-						</div>
-					</li>
-				</ul>
-			</div>
-			<div class="clearfix" ng-controller='bannerController as bannerCtrl'>
-				<div class="top-banner">
+			</header>
+			<div class="main">
+				<div class='scoreboard' ng-controller="scoreboardController as scoreboardCtrl">
 					<ul>
-						<li class='banner-item' ng-repeat='banner in bannerCtrl.banners'>
-							{{banner}}
+						<li class='scoreboard-item' ng-repeat="game in scoreboardCtrl.games">
+							<div>
+								<table class = 'scoreboard-table'>
+									<caption class='scoreboard-timeleft'>{{game.time}}</caption>
+									<tr class = 'scoreboard-row scoreboard-teamA'>
+										<td>{{game.teamA.rank}}</td>
+										<td>{{game.teamA.name}}</td>
+										<td>{{game.teamA.score}}</td>
+									</tr>
+									<tr class = 'scoreboard-row scoreboard-teamB'>
+										<td>{{game.teamB.rank}}</td>
+										<td>{{game.teamB.name}}</td>
+										<td>{{game.teamB.score}}</td>
+									</tr>
+								</table>
+							</div>
 						</li>
 					</ul>
 				</div>
-			</div>
-			<div class="main-content">
-				<div class="sc-topics" ng-controller="topicsController as topicsCtrl">
-					<ul class="sc-topics-list">
-						<li class='sc-topic-logo'></li>
-						<li class='sc-topic-item' ng-repeat='topic in topicsCtrl.topics'>
-							{{topic.text}}
-						</li>
-					</ul>
+				<div class="clearfix" >
+					<div class="top-banner" ng-controller='bannerController as bannerCtrl'>
+						<ul>
+							<li class='banner-item' ng-repeat='banner in bannerCtrl.banners'>
+								{{banner}}
+							</li>
+						</ul>
+					</div>
 				</div>
-				<div class="highlight-stories" ng-controller="highlightController as highCtrl">
-					<div class="main-display">
-						<div class="highlight-overlay" >
-							<div class='big-display'>
-									<img class='highlight-image' src='{{highCtrl.stories[0].big.background}}'/>
-								<div class='play-button'>
-								</div>
-								<div class='text-overlay'>
-									{{highCtrl.stories[0].big.title}}
+				<div class="main-content">
+					<div class="sc-topics" ng-controller="topicsController as topicsCtrl">
+						<ul class="sc-topics-list">
+							<li class='sc-topic-logo'></li>
+							<li class='sc-topic-item' ng-repeat='topic in topicsCtrl.topics'>
+								{{topic.text}}
+							</li>
+						</ul>
+					</div>
+					<div class="highlight-stories" ng-controller="highlightController as highCtrl">
+						<div class="main-display">
+							<div class="highlight-overlay" >
+								<div class='big-display'>
+										<img class='highlight-image' src='{{highCtrl.stories[0].big.background}}'/>
+										<img class='play-button-image' src='http://www.wpclipart.com/signs_symbol/arrows/button_arrows/play_buttons/play_button.svg'/>
+									<div class='text-overlay'>
+										<h2>{{highCtrl.stories[0].big.title}}</h2>
+										<p>{{highCtrl.stories[0].big.text}}
+										<a class='main-topic-link' ng-repeat="link in highCtrl.stories[0].big.links" href="{{link.url}}">{{link.text}}</a>
+									</div>
 								</div>
 							</div>
-						</div>
-						<div class="sub-displays">
-							<div class='sub-display-item' ng-repeat='story in highCtrl.stories'>
-								<img class="background-img" src="{{story.small.background}}"/>
-								<div class='text-overlay'>{{story.small.title}}</div>
+							<div class="sub-displays">
+								<div ng-click='highCtrl.selectHigh()' class='sub-display-item' ng-repeat='story in highCtrl.stories'>
+									<img class="background-img" src="{{story.small.background}}"/>
+									<div class='sub-text-overlay'>{{story.small.title}}</div>
+								</div>
 							</div>
 						</div>
 					</div>
+					<div class="right-panel" ng-controller="rightController as rtCtrl">
+						<ul class='right-list'>
+							<li class='right-list-item' ng-repeat='topic in rtCtrl.topics'>
+								<a class="rt-link" href="{{topic.url}}"><span class='rt-text'>{{topic.text}}</span></a>
+								<!-- <span class='rt-glyph'>{{topic.glyph}}</span> -->
+							</li>
+						</ul>
 				</div>
-				<div class="right-panel" ng-controller="rightController as rtCtrl">
-					<ul class='right-list'>
-						<li class='right-list-item' ng-repeat='topic in rtCtrl.topics'>
-							<a class="rt-link" href="{{topic.url}}"><span class='rt-text'>{{topic.text}}</span></a>
-							<!-- <span class='rt-glyph'>{{topic.glyph}}</span> -->
-						</li>
-					</ul>
 			</div>
 		</div>
 		<footer>
