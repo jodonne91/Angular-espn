@@ -28,6 +28,11 @@
 			that.stories = data;
 			console.log(data)
 		});
+
+		this.selectHigh = function(item){
+			console.log(item)
+		}
+
 	}])
 	.controller('rightController', ["$http",function($http){
 		var that = this;
@@ -37,7 +42,6 @@
 			console.log(data)
 		})
 	}])
-	.controller('')
 })();
 
 var currentGames = [
