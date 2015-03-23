@@ -1,0 +1,198 @@
+a{
+	text-decoration: none;
+	color: inherit;
+}
+
+.scoreboard{
+	display: block;
+	position: relative;
+}
+
+.scoreboard-row{
+	margin: 0;
+	padding: 0;
+}
+
+div{
+	border: 1px solid black;
+}
+
+.scoreboard-row td{
+	margin-top: 0;
+	margin-bottom: 0;
+	padding-top: 0;
+	padding-bottom: 0;
+}
+
+.scoreboard-timeleft{
+	width: 100%;
+	text-align: left;
+	font-family: Verdana;
+	font-size: 9px;
+	color: #464444;
+	background-color: #919191;
+	font-weight: bold;
+	width: inherit;
+	padding-left: 3px; 
+}
+
+.scoreboard-item{
+	position: relative;
+	height: 35px;
+	margin: 0;
+	padding: 0 2px 0 0;
+	width: auto;
+	float: left;
+	list-style: none;
+	border: 0;
+	outline: 0;
+	vertical-align: baseline;
+}
+
+.scoreboard-item div{
+	position: relative;
+	display: inline-block;
+	color: #464444;
+    background-color: #afafaf;
+    font-family: Verdana;
+	font-size: 10px;
+	height: 39px;
+	color: #2f2f2f;
+	line-height: 11px;
+	float: left;
+	margin-right: 0;
+	overflow: hidden;
+	width: auto;
+	padding-right: 0px;
+	padding-left: 0px;
+	position: relative;
+}
+
+.clearfix{
+	display: block;
+	position: relative;
+	margin-top: 10px;
+}
+
+.top-banner{
+	float: left;
+	clear: left;
+}
+
+.banner-item:first-child{
+}
+
+.banner-item{
+	display: inline-block;
+	list-style: none;
+	padding-left: 10px;
+	float: left;
+	border-bottom: 1px #CCC solid;
+	margin-left: -5px;
+	padding: 8px 10px 7px;
+	overflow: hidden;
+	font-family: Helvetica,Arial,sans-serif;
+	font-size: 12px;
+	line-height: 18px;
+	height: 19px;
+	background-color: #000000;
+	color: white;
+}
+
+.main-content{
+	width: 950px;
+	height: 100%;
+	position: relative;
+}
+
+
+.sc-topics{
+	background-color: #fff;
+	border-bottom: 1px solid #e2e2e2;
+	background-image: linear-gradient(to bottom,#dbdbdb 0,#fff 100%);
+	  width: 924px;
+  margin-right: 0;
+  float: left;
+  position: relative;
+  font-family: verdana,helvetica,arial,sans-serif;
+  display: inline-block;
+}
+
+.sc-topic-logo{
+	  background: url(http://a2.espncdn.com/i/sctrends/logo-sc-trends2.png) no-repeat -5px 0;
+  width: 144px;
+  height: 35px;
+  text-indent: -1000em;
+  top: -9px;
+  display: inline-block;
+}
+
+.sc-topics-list{
+	  float: left;
+  overflow: hidden;
+  height: 35px;
+  white-space: nowrap;
+  list-style: none;
+  vertical-align: baseline;
+  display: inline-block;
+    font-size: 12px;
+  font-weight: bold;
+  margin: 0;
+  padding: 0;
+}
+
+.sc-topic-item{
+	display: inline-block;
+	padding-left: 22px;
+	  position: relative;
+  bottom: 13px;
+}
+
+.sub-displays{
+	float: left;
+	font-size: 12px;
+	clear: left;
+}
+
+.sub-display-item{
+	display: inline-block;
+	margin: 5px;
+}
+
+.background-img{
+	float: left;
+}
+
+.highlight-overlay{
+	height:428px;
+	width: 614px;
+	position: relative;
+	padding: 0;
+	margin: 0;
+	float: left;
+	display: inline-block;
+}
+
+.highlight-image{
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	display: block;
+	height: 342px;
+}
+
+.text-overlay{
+	background-color: black;
+	color: white;
+	height: 86px;
+}
+
+.right-panel{
+	float: right;
+}
+
+.right-list{
+	font-size: 13px;
+}
+
