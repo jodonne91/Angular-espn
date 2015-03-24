@@ -21,17 +21,27 @@
 			console.log(data)
 		});
 	}])
-	.controller('highlightController', ["$http", function($http){
+	.controller('highlightController', ["$http", "$timeout", function($http, $timeout){
 		var that = this;
 		this.stories = [];
+		this.showID = 0;
+
 		$http.get('http://tiy-espn-info.herokuapp.com/espn/carousel').success(function(data){
 			that.stories = data;
 			console.log(data)
 		});
 
 		this.selectHighlight = function(item){
-			console.log(item)
-		}
+			console.log(item.$index)
+			this.showID = item.$index;
+		};
+
+		this.hide = function(item){
+			if(item.$index === this.showID){
+				return false;
+			};
+			return true;
+		};
 
 	}])
 	.controller('rightController', ["$http",function($http){
